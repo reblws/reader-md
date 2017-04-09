@@ -2,4 +2,4 @@ node_modules/
 .DS_Store
 .env
 npm-debug.log
-.vs_code/
+.vscode/
