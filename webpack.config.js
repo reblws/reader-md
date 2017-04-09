@@ -1,7 +1,5 @@
-var webpack = require('webpack');
-
 module.exports = {
-    entry: "./index.js",
+    entry: "./app/index.js",
     output: {
       path: __dirname + '/dist',
       filename: "bundle.min.js"
@@ -18,7 +16,4 @@ module.exports = {
             }]
         }]
     },
-    plugins: [
-    new webpack.optimize.UglifyJsPlugin({minimize: true})
-  ]
 };

@@ -1,13 +1,16 @@
 require("./styles/main.scss");
-var flowtype = require('flowtype');
-var Remarkable = require('remarkable');
-var hljs = require('highlight.js');
+import flowtype from 'flowtype';
+import Remarkable from 'remarkable';
+import hljs from 'highlight.js';
 
 // Wait for DOM content to load
 
 document.addEventListener("DOMContentLoaded", function(event) {
-  var markdownViewer = document.getElementById('view');
 
+  console.log("DOM Content loaded");
+
+
+  var markdownViewer = document.getElementById('markdownViewer');
   if (!markdownViewer) {
     return;
   }
@@ -44,6 +47,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
   // Set some props from the data we just received from SN.
   // This is where we output the message onto html I think.
   window.addEventListener("message", function(event){
+    
+    console.log("message received");
+
     window.noteText = event.data.text || "";
     window.noteId = event.data.id;
     markdownViewer.innerHTML = markdownParser.render(window.noteText);
