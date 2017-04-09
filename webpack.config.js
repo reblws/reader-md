@@ -2,7 +2,7 @@ module.exports = {
     entry: "./index.js",
     output: {
       path: __dirname + '/dist',
-      filename: "bundle.js"
+      filename: "bundle.min.js"
     },
     module: {
         rules: [{
@@ -15,5 +15,8 @@ module.exports = {
                 loader: "sass-loader" // compiles Sass to CSS
             }]
         }]
-    }
+    },
+    plugins: [
+    new webpack.optimize.UglifyJsPlugin({minimize: true})
+  ]
 };

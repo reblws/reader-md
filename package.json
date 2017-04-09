@@ -12,5 +12,10 @@
   "description": "standard notes editor",
   "main": "index.js",
   "repository": "git@github.com:reblws/reader-md.git",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "flowtype": "^2.0.0",
+    "highlight.js": "^9.10.0",
+    "remarkable": "^1.7.1"
+  }
 }
