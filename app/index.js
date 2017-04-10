@@ -9,9 +9,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   console.log("DOM Content loaded");
 
-  var markdownViewer = document.getElementById('mdReader');
+  var markdownViewer = document.getElementById('markdownViewer');
   if (!markdownViewer) {
-    console.log('Markdown Viewer div not found')
+    console.log('Markdown Viewer not foun')
     return;
   }
 
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   flowtype(markdownViewer, {
     maxWidth: '800px',
     minWidth: '300px',
-    lineRatio: 1.45,
+    fontRatio: 30,
     min: 14,
     max: 22
   });
