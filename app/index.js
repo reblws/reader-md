@@ -9,6 +9,23 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   console.log("DOM Content loaded");
 
+  // postMessage is how we communicate with Standard Notes
+  if (window.parent != window) {
+    window.parent.postMessage({status: 'ready'}, '*');
+    console.log('message posted')
+  };
+
+
+  // Set some props from the data we just received from SN.
+  // This is where we output the message onto html I think.
+  window.addEventListener("message", function(event){    
+    console.log("message received");
+
+    window.noteText = event.data.text || "";
+    window.noteId = event.data.id;
+    markdownViewer.innerHTML = markdownParser.render(window.noteText);
+  }, false);
+
 
   var markdownViewer = document.getElementById('markdownViewer');
   if (!markdownViewer) {
@@ -44,22 +61,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
   });
 
 
-  // Set some props from the data we just received from SN.
-  // This is where we output the message onto html I think.
-  window.addEventListener("message", function(event){
-    
-    console.log("message received");
-
-    window.noteText = event.data.text || "";
-    window.noteId = event.data.id;
-    markdownViewer.innerHTML = markdownParser.render(window.noteText);
-  }, false);
-
-  // postMessage is how we communicate with Standard Notes
-  if (window.parent != window) {
-    window.parent.postMessage({status: 'ready'}, '*');
-  };
-
+  markdownViewer.innerHTML = markdownParser.render(window.noteText);
+  console.log(window)
 });
 
 
