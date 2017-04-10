@@ -9,6 +9,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   console.log("DOM Content loaded");
 
+  var markdownViewer = document.getElementById('view');
+  if (!markdownViewer) {
+    return;
+  }
+
   // postMessage is how we communicate with Standard Notes
   if (window.parent != window) {
     window.parent.postMessage({status: 'ready'}, '*');
@@ -27,10 +32,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   }, false);
 
 
-  var markdownViewer = document.getElementById('markdownViewer');
-  if (!markdownViewer) {
-    return;
-  }
+
 
   // Now just to set up markdownParser.set
   var markdownParser = new Remarkable({
