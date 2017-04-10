@@ -9,8 +9,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   console.log("DOM Content loaded");
 
-  var markdownViewer = document.getElementById('view');
+  var markdownViewer = document.getElementById('mdReader');
   if (!markdownViewer) {
+    console.log('Markdown Viewer div not found')
     return;
   }
 
