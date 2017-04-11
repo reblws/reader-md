@@ -1,0 +1,16 @@
+body {
+  font-family: sans-serif;
+  font-size: 18px;
+}
+
+#markdownViewer {
+  padding-left: 1em;
+  padding-right: 1em;
+  max-width: 900px;
+}
+
+/* Typography */
+
+h1,h2,h3,h4,h5,h6,p {
+ line-height: 1.45;
+}
