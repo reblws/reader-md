@@ -11,8 +11,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
   const markdownViewer = document.getElementById('markdownViewer');
 
   flowtype(markdownViewer, {
-      minimum   : 500,
-      maximum   : 1080,
       minFont   : 12,
       maxFont   : 24,
       fontRatio : 30
