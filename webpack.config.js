@@ -8,11 +8,11 @@ module.exports = {
     },
     plugins: [
       new webpack.DefinePlugin({
-        '__DEV__': false
+        '__DEV__': false // Set this to true for development
       }),
       new webpack.optimize.UglifyJsPlugin({
         compress: {
-          warnings: true
+          warnings: false
         }
       })
     ]

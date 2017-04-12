@@ -10,6 +10,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   const markdownViewer = document.getElementById('markdownViewer');
 
+  flowtype(markdownViewer, {
+      minimum   : 500,
+      maximum   : 1080,
+      minFont   : 12,
+      maxFont   : 24,
+      fontRatio : 30
+    }
+  );
+
   if (!markdownViewer) {
     return;
   }
@@ -48,11 +57,4 @@ document.addEventListener("DOMContentLoaded", function(event) {
     markdownViewer.innerHTML = markdownParser.render(window.noteText);
   }, false);
 
-  flowtype(markdownViewer, {
-      minimum   : 500,
-      maximum   : 900,
-      minFont   : 12,
-      maxFont   : 22,
-      fontRatio : 30
-    });
 });
