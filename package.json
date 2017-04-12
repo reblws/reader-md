@@ -1,6 +1,5 @@
 {
   "devDependencies": {
-    "flowtype-js": "^0.1.1",
     "webpack": "^2.3.2"
   },
   "name": "reader-md",
@@ -10,6 +9,7 @@
   "repository": "git@github.com:reblws/reader-md.git",
   "license": "MIT",
   "dependencies": {
+    "flowtype-js": "^0.1.1",
     "highlight.js": "^9.10.0",
     "remarkable": "^1.7.1"
   },
