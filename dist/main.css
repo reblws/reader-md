@@ -6,11 +6,12 @@ body {
 #markdownViewer {
   padding-left: 0.8em;
   padding-right: 0.8em;
-  max-width: 1080px;
+  max-width: 800px;
 }
 
 @media screen and (min-width: 1080px) {
   #markdownViewer {
+    padding: 0;
     margin-left: auto;
     margin-right: auto;
   }
