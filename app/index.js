@@ -10,10 +10,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   const markdownViewer = document.getElementById('markdownViewer');
 
+  // Edit text-resizing here
   flowtype(markdownViewer, {
       minFont   : 12,
-      maxFont   : 24,
-      fontRatio : 30
+      maxFont   : 26,
+      fontRatio : 30 // For line-height
     }
   );
 
@@ -25,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   const markdownParser = new Remarkable({
     html: true,
     breaks: true,
+    langPrefix: 'lang-',
     typographer: true,
     quotes: '“”‘’',
     highlight: function (str, lang) {
@@ -33,10 +35,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
           return hljs.highlight(lang, str).value;
         } catch (err) {}
       }
-
-      try {
-        return hljs.highlightAuto(str).value;
-      } catch (err) {}
 
       return ''; // use external default escaping
     },
@@ -53,6 +51,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
     window.noteText = event.data.text || "";
     window.noteId = event.data.id;
     markdownViewer.innerHTML = markdownParser.render(window.noteText);
+
+    hljs.initHighlightingOnLoad(); // Trigger syntax highlighting on render
   }, false);
 
 });
