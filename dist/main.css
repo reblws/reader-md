@@ -14,3 +14,68 @@ body {
 h1,h2,h3,h4,h5,h6,p {
  line-height: 1.45;
 }
+
+/* MD styling */
+a {
+  color: #086dd6
+}
+
+pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+table {
+ border-collapse: collapse;
+ border-spacing: 0;
+}
+
+td,
+th {
+ padding: 0;
+}
+
+table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+th {
+  font-weight: bold;
+}
+
+th, td {
+  padding: 0.5rem 1rem;
+  border: 1px solid #e9ebec;
+}
+
+blockquote {
+  padding: 0 1rem;
+  margin-left: 0;
+  color: #819198;
+  border-left: 0.3rem solid #dce6f0;
+}
+
+blockquote > :first-child {
+  margin-top: 0;
+}
+
+blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+
+p code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border-radius: 4px;
+}
