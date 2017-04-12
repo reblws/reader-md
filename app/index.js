@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   // Edit text-resizing here
   flowtype(markdownViewer, {
       minFont   : 12,
-      maxFont   : 26,
+      maxFont   : 22,
       fontRatio : 30 // For line-height
     }
   );
