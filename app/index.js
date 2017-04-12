@@ -52,12 +52,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       minimum   : 500,
       maximum   : 900,
       minFont   : 12,
-      maxFont   : 40,
+      maxFont   : 22,
       fontRatio : 30
     });
 });
-
-
-
-
-
