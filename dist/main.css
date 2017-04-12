@@ -86,3 +86,7 @@ p code {
   background-color: #f9f2f4;
   border-radius: 4px;
 }
+
+li {
+  line-height: 1.45;
+}
