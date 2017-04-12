@@ -78,7 +78,7 @@ blockquote > :last-child {
   margin-bottom: 0;
 }
 
-
+li code,
 p code {
   padding: 2px 4px;
   font-size: 90%;
