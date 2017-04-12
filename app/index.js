@@ -1,5 +1,4 @@
-require("./styles/main.scss");
-import flowtype from 'flowtype';
+import flowtype from 'flowtype-js';
 import Remarkable from 'remarkable';
 import hljs from 'highlight.js';
 
@@ -13,19 +12,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
   if (!markdownViewer) {
     return;
   }
-
-  // postMessage is how we communicate with Standard Notes
-  if (window.parent != window) {
-    window.parent.postMessage({status: 'ready'}, '*');
-  };
-
-  // Set some props from the data we just received from SN.
-  // This is where we output the message onto html I think.
-  window.addEventListener("message", function(event){    
-    window.noteText = event.data.text || "";
-    window.noteId = event.data.id;
-    markdownViewer.innerHTML = markdownParser.render(window.noteText);
-  }, false);
 
   // Now just to set up markdownParser.set
   const markdownParser = new Remarkable({
@@ -47,18 +33,26 @@ document.addEventListener("DOMContentLoaded", function(event) {
     },
   });
 
+  // postMessage is how we communicate with Standard Notes
+  if (window.parent != window) {
+    window.parent.postMessage({status: 'ready'}, '*');
+  };
+
+  // Set some props from the data we just received from SN.
+  // This is where we output the message onto html I think.
+  window.addEventListener("message", function(event){    
+    window.noteText = event.data.text || "";
+    window.noteId = event.data.id;
+    markdownViewer.innerHTML = markdownParser.render(window.noteText);
+  }, false);
+
   flowtype(markdownViewer, {
-    maxWidth: '850px',
-    minWidth: '300px',
-    lineRatio: 1.45,
-    min: 14,
-    max: 21
-
-  });
-
-
-  markdownViewer.innerHTML = markdownParser.render(window.noteText);
-  console.log(window)
+    minimum   : 500,
+    maximum   : 1200,
+    minFont   : 12,
+    maxFont   : 40,
+    fontRatio : 30
+  );
 });
 
 
